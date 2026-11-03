@@ -1,0 +1,20 @@
+.headerCont {
+  padding: 15px 20px;
+  background-color: aquamarine;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navList {
+  display: flex;
+  gap: 20px;
+  list-style-type: none;
+}
+.navItem {
+  color: black;
+  text-decoration: none;
+}
+.logo {
+  font-size: 25px;
+}
