@@ -1,0 +1,11 @@
+.todoCont {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.listCont {
+    margin-left: 20px;
+}
