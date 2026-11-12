@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./page.module.css";
 
 // useState, useEffect...
@@ -9,22 +9,29 @@ export default function Testpage() {
 
   const [count, setCount] = useState(0);
 
+  useEffect(() => {
+    console.log("გამარჯობა");
+    // Dependency array:
+  }, []);
+
+  useEffect(() => {
+    // მაგ. ინფორმაციის წამოღება, შენახვა localStorage-ში.
+    console.log(localStorage.getItem("userName"));
+  }, []);
+
   const incrementByOne = () => {
     // count++;
 
     setCount((prevCount) => {
-      console.log(prevCount);
+      // console.log(prevCount);
 
       return prevCount + 1;
     });
   };
 
   const decreamentByOne = () => {
-    
     setCount((prevCount) => {
-
       return prevCount - 1;
-    
     });
   };
 
