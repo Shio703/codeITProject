@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./page.module.css";
 
 const Todo = () => {
@@ -11,16 +11,65 @@ const Todo = () => {
     console.log(task);
   };
 
-  const addTask = () => {};
+  const addTask = () => {
+    if (!task) return;
+    setTasksArray((prevTasks) => {
+      return [
+        ...prevTasks,
+        { task: task, completed: false, id: crypto.randomUUID() },
+      ];
+    });
+    setTask("");
+  };
+
+  const removeTask = (id) => {
+    let res = tasksArray.filter((t) => t.id !== id);
+    setTasksArray(res);
+  };
+
+  const toggleTask = (id) => {
+    const toggledArray = tasksArray.map((t) => {
+      return t.id === id ? { ...t, completed: !t.completed } : t;
+    });
+    setTasksArray(toggledArray);
+  };
+
+  useEffect(() => {
+    console.log(tasksArray);
+  }, [tasksArray]);
+
+  // Enter-ის listener:
+  const onKeyDown = (e) => {
+    if (e.key === "Enter") addTask();
+  };
 
   return (
     <div className={styles.todoCont}>
-      <input type="text" onChange={onChange} />
-      <button onClick={addTask}>Add Task</button>
+      <div className={styles.inputCont}>
+        <input
+          type="text"
+          onChange={onChange}
+          value={task}
+          onKeyDown={onKeyDown}
+        />
+        <button onClick={addTask}>Add Task</button>
+      </div>
       <ol className={styles.listCont}>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
+        {tasksArray.map((t, index, array) => {
+          return (
+            <div key={t.id}>
+              <li
+                onClick={() => toggleTask(t.id)}
+                className={t.completed ? styles.done : ""}
+              >
+                {t.task}
+              </li>
+              <button onClick={() => removeTask(t.id)}>X</button>
+            </div>
+          );
+        })}
+
+        {tasksArray.length === 0 && <h3>{"No tasks:)"}</h3>}
       </ol>
     </div>
   );
