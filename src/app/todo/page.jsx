@@ -39,6 +39,8 @@ const Todo = () => {
 
     const dataInStorage = JSON.parse(localStorage.getItem("todoTasks"));
     if (dataInStorage.length > 0) setTasksArray(dataInStorage);
+
+    // throw new Error("სერვერთან ვერ ხდება დაკავშირება, სცადეთ მოგვიანებით!")
   }, []);
 
   useEffect(() => {
