@@ -1,5 +1,6 @@
 .todoCont {
   width: 90%;
+  max-width: var(--global-max-width);
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -8,10 +9,45 @@
   margin: 20 auto;
 }
 
+.inputCont {
+  display: flex;
+  height: 40px;
+}
+
+.inputCont input {
+  outline: none;
+  /* padding: 3% 4%; */
+  /* flex: 2; */
+}
+.inputCont button {
+  cursor: pointer;
+}
+
 .listCont {
   width: 80%;
   margin-left: 20px;
 }
+.taskCont {
+  display: flex;
+  width: 90%;
+  margin-bottom: 5px;
+  justify-content: space-between;
+  li {
+    cursor: pointer;
+  }
+}
+
+.rmBtn {
+  border-radius: 60%;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+.rmBtn:hover {
+  background-color: rgb(114, 58, 58);
+  color: white;
+}
+
 
 .done {
   text-decoration: line-through;

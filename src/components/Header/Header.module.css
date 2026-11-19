@@ -4,6 +4,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: var(--global-max-width);
+  margin: 0 auto;
 }
 
 .navList {

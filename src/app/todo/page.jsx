@@ -57,14 +57,14 @@ const Todo = () => {
       <ol className={styles.listCont}>
         {tasksArray.map((t, index, array) => {
           return (
-            <div key={t.id}>
+            <div key={t.id} className={styles.taskCont}>
               <li
                 onClick={() => toggleTask(t.id)}
                 className={t.completed ? styles.done : ""}
               >
                 {t.task}
               </li>
-              <button onClick={() => removeTask(t.id)}>X</button>
+              <button className={styles.rmBtn} onClick={() => removeTask(t.id)}>X</button>
             </div>
           );
         })}
