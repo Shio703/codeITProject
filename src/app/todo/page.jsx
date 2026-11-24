@@ -36,12 +36,12 @@ const Todo = () => {
 
   useEffect(()=> {
     if (localStorage.getItem("todoTasks") === null) return;
-    
+
     const dataInStorage = JSON.parse(localStorage.getItem("todoTasks"));
     if(dataInStorage === null) return;
     if(dataInStorage.length > 0) setTasksArray(dataInStorage);
 
-    console.log(dataInStorage)
+    // throw new Error("Couldn't connect to server, try again later")
   }, []);
 
   useEffect(() => {
