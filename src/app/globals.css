@@ -7,7 +7,7 @@
 }
 
 :root {
-  --global-max-width: 1000px;
+  --global-max-width: 1200px;
 }
 
 body {
@@ -34,4 +34,9 @@ body {
 
 .errorCont button:hover {
   background-color: aliceblue;
+=======
+}
+
+.errorCont button:hover {
+   background-color: aliceblue;
 }

@@ -1,5 +1,6 @@
 .todoCont {
   width: 90%;
+  height: 100%;
   max-width: var(--global-max-width);
   display: flex;
   /* justify-content: center; */
