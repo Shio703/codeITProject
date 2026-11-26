@@ -35,6 +35,10 @@ const linksArray = [
     title: "Todo App",
     path: "/todo",
   },
+  {
+    title: "Products",
+    path: "/products",
+  },
 ];
 
 export default function RootLayout({ children }) {

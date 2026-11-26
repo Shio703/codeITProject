@@ -1,0 +1,15 @@
+.productCard {
+  max-width: 250px;
+  max-height: 355px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.infoCont {
+  display: flex;
+  justify-content: space-between;
+}
+
+.productImage {
+  object-fit: contain;
+}
