@@ -36,11 +36,13 @@ export default function Testpage() {
   };
 
   return (
-    <>
+    <main className={styles.mainCont}>
       <h2>{count}</h2>
-      <button onClick={incrementByOne}>+</button>
-      {"     "}
-      <button onClick={decreamentByOne}>-</button>
-    </>
+      <div>
+        <button onClick={incrementByOne}>+</button>
+        {"     "}
+        <button onClick={decreamentByOne}>-</button>
+      </div>
+    </main>
   );
 }

@@ -11,10 +11,11 @@
 }
 
 body {
-  height: 100vh;
-  display: flex;
+  height: 100%;
+  min-height: 95vh;
+  /* display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-between; */
 }
 
 .errorCont {
